@@ -41,7 +41,7 @@ while ($arItem = $dbItems->fetch()){
 Iblock\ElementTable::add($data); // добавление элемента в инфоблок
 Iblock\ElementTable::addMulti($rows, $ignoreEvents = false); // для множественного добавления записей
 Iblock\ElementTable::checkFields($result, $primary, $data); //проверяет поля данных перед записью в БД.
-Iblock\ElementTable::delete($id); // удаление элемента по ID.ЗАБЛОКИРОВАН!
+Iblock\ElementTable::delete($primary); // удаление элемента по ID.ЗАБЛОКИРОВАН!
 Iblock\ElementTable::getById($id); // получение элемента по ID
 Iblock\ElementTable::getByPrimary($primary, $parameters = array()); //возвращает выборку по первичному ключу сущности и по опциональным параметрам
 Iblock\ElementTable::getConnectionName(); //возвращает имя соединения для сущности
@@ -54,6 +54,6 @@ Iblock\ElementTable::getRowById($id); //возвращает один столб
 Iblock\ElementTable::getTableName(); //возвращает имя таблицы БД для сущности
 Iblock\ElementTable::query(); //создаёт и возвращает объект запроса для сущности
 Iblock\ElementTable::update($primary, $data); // обновление элемента по ID
-Iblock\ElementTable::updateMulti($ids, $data, $ignoreEvents = false);
+Iblock\ElementTable::updateMulti($primaries, $data, $ignoreEvents = false);
 Iblock\ElementTable::enableCrypto($field, $table = null, $mode = true); //устанавливает флаг поддержки шифрования для поля
 Iblock\ElementTable::cryptoEnabled($field, $table = null); //возвращает true если шифрование разрешено для поля
