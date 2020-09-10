@@ -23,6 +23,7 @@ $dbItems = Iblock\ElementTable::getList(array(
 
 while ($arItem = $dbItems->fetch()){
 
+    //не нашёл метода в d7 для выборки свойст элемента
     // собирает массив свойств
     $dbProperty = \CIBlockElement::getProperty(
         $arItem['IBLOCK_ID'],
